@@ -1,0 +1,31 @@
+/* src/Footer.css */
+
+/* Variables de couleur et de police pour la cohérence */
+:root {
+    --color-primary: #006064;
+    --color-secondary: #00838f;
+    --color-white: #ffffff;
+    --color-background: #f0f4f7;
+}
+
+.main-footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.footer-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.social-icons .social-icon-link {
+    color: var(--color-white);
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons .social-icon-link:hover {
+    color: var(--color-accent); /* Couleur accent que nous avons définie */
+}

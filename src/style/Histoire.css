@@ -1,0 +1,106 @@
+/* style/Histoire.css */
+
+/* --- Importation des polices et des variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --color-primary: #006064;
+    --color-secondary: #00838f;
+    --color-accent: #ffb74d;
+    --color-text: #333;
+    --color-background: #f0f4f7;
+    --color-white: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* --- En-tête de la page Histoire --- */
+.histoire-header {
+    background-image: url('../images/histoire.png');
+    background-position: center;
+    padding: 100px 0;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour la lisibilité */
+}
+
+.histoire-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* Assombrir l'image de fond */
+}
+
+.histoire-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.histoire-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.histoire-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* --- Sections de contenu (harmonisé avec la page d'accueil) --- */
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    line-height: 1.8;
+}
+
+/* Effet de survol sur les images */
+.img-hover-scale:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Lignes de séparation */
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-secondary);
+    opacity: 0.5;
+}
+
+/* Animations de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+
+/* Rendre le site responsive */
+@media (max-width: 768px) {
+    .histoire-title {
+        font-size: 2.5rem;
+    }
+    .histoire-subtitle {
+        font-size: 1rem;
+    }
+}

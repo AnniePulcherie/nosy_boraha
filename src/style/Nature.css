@@ -1,0 +1,78 @@
+/* style/Nature.css */
+
+/* --- Importation des polices et des variables (répétition pour la cohérence) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --color-primary: #006064;
+    --color-secondary: #00838f;
+    --color-accent: #ffb74d;
+    --color-text: #333;
+    --color-background: #f0f4f7;
+    --color-white: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+.nature-section {
+    background-color: var(--color-background);
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    line-height: 1.8;
+}
+
+/* --- Section de l'animation de la baleine --- */
+.ocean-container {
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* La baleine démarre du bas */
+    overflow: hidden;
+}
+
+.whale {
+    position: absolute;
+    bottom: -150px; /* Position de départ, hors de la vue */
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whale img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* L'animation de saut */
+.jump-animation {
+    animation: jump 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes jump {
+    0% {
+        bottom: -150px;
+        transform: scale(0.9);
+    }
+    30% {
+        bottom: 200px;
+        transform: scale(1.1);
+    }
+    70% {
+        bottom: 150px;
+        transform: scale(1.05);
+    }
+    100% {
+        bottom: -50px;
+        transform: scale(0.9);
+    }
+}
