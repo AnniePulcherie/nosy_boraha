@@ -1,6 +1,6 @@
 /* style/Nature.css */
 
-/* --- Importation des polices et des variables (répétition pour la cohérence) --- */
+/* --- Importation des polices et des variables --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
 
 :root {
@@ -15,10 +15,12 @@
 }
 
 .nature-section {
-    height: 81vh;
+    height: 80vh; /* Hauteur ajustée pour les grands écrans */
     background-color: var(--color-background);
     padding: 4rem 0;
     bottom: 0;
+    display: flex;
+    align-items: center; /* Centrer verticalement le contenu */
 }
 
 .section-title {
@@ -38,21 +40,23 @@ p {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* La baleine démarre du bas */
+    align-items: flex-end;
     overflow: hidden;
 }
 
 .whale {
     position: absolute;
-    bottom: -50px; /* Position de départ, hors de la vue */
+    bottom: -100px; /* Position de départ hors de la vue */
     width: 400px;
     transition: transform 0.3s ease-in-out;
 }
 
 .whale img {
-    width: 400%;
+    width: 100%; /* Ajuste la largeur de l'image */
     height: auto;
     display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* L'animation de saut */
@@ -62,19 +66,60 @@ p {
 
 @keyframes jump {
     0% {
-        bottom: -150px;
-        transform: scale(0.9);
+        bottom: -100px;
+        transform: scale(0.9) rotate(0deg);
     }
     30% {
-        bottom: 500px;
-        transform: scale(1.1);
+        bottom: 250px;
+        transform: scale(1.1) rotate(5deg);
     }
     70% {
-        bottom: 350px;
-        transform: scale(1.05);
+        bottom: 200px;
+        transform: scale(1.05) rotate(-2deg);
     }
     100% {
-        bottom: 200px;
-        transform: scale(1.2);
+        bottom: 150px;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* --- Styles pour les petits écrans (tablettes et mobiles) --- */
+@media (max-width: 768px) {
+    .nature-section {
+        height: auto; /* Permet à la section de s'adapter au contenu */
+        padding: 2rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .whale {
+        width: 300px; /* Réduit la taille de la baleine */
+        bottom: -50px; /* Ajuste la position de départ */
+    }
+
+    .ocean-container {
+        height: 400px; /* Réduit la hauteur de la zone d'animation */
+    }
+
+    @keyframes jump {
+        0% {
+            bottom: -50px;
+            transform: scale(0.9) rotate(0deg);
+        }
+        30% {
+            bottom: 200px;
+            transform: scale(1.1) rotate(5deg);
+        }
+        70% {
+            bottom: 150px;
+            transform: scale(1.05) rotate(-2deg);
+        }
+        100% {
+            bottom: 100px;
+            transform: scale(1) rotate(0deg);
+        }
     }
 }
