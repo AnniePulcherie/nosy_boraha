@@ -15,8 +15,10 @@
 }
 
 .nature-section {
+    height: 81vh;
     background-color: var(--color-background);
     padding: 4rem 0;
+    bottom: 0;
 }
 
 .section-title {
@@ -32,7 +34,7 @@ p {
 
 /* --- Section de l'animation de la baleine --- */
 .ocean-container {
-    height: 400px;
+    height: 600px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -42,13 +44,13 @@ p {
 
 .whale {
     position: absolute;
-    bottom: -150px; /* Position de départ, hors de la vue */
-    width: 300px;
+    bottom: -50px; /* Position de départ, hors de la vue */
+    width: 400px;
     transition: transform 0.3s ease-in-out;
 }
 
 .whale img {
-    width: 100%;
+    width: 400%;
     height: auto;
     display: block;
 }
@@ -64,15 +66,15 @@ p {
         transform: scale(0.9);
     }
     30% {
-        bottom: 200px;
+        bottom: 500px;
         transform: scale(1.1);
     }
     70% {
-        bottom: 150px;
+        bottom: 350px;
         transform: scale(1.05);
     }
     100% {
-        bottom: -50px;
-        transform: scale(0.9);
+        bottom: 200px;
+        transform: scale(1.2);
     }
 }
